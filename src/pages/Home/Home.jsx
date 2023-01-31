@@ -1,10 +1,11 @@
+// import { MoviesItem } from 'components/MoviesItem/MoviesItem';
 import { MoviesItem } from 'components/MoviesItem/MoviesItem';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getMovieTrendApi } from 'service/api';
 // import PropTypes from 'prop-types'
 
-export function Home(props) {
+export const Home = () => {
   const [setError] = useState(null);
   const [dataMovies, setDataMovies] = useState([]);
 
@@ -23,6 +24,6 @@ export function Home(props) {
       ))}
     </ul>
   );
-}
+};
 
 // Layout.propTypes = {}

@@ -37,5 +37,5 @@ export const getMovieByIdApi = async (id) => {
           api_key: API_KEY,
       },
     })
-    .then((response) => console.log('response.data >> ', response.data));
+    .then((response) => response.data);
 };

@@ -1,8 +1,29 @@
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
 .link {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 2px;
+
+  padding: 5px 7px;
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(33, 34, 68, 0.503);
+  border-radius: 4px;
+
+  font-size: 15px;
+  font-weight: 500;
 }
 
 a {
   color: inherit;
+}
+
+.activeLink {
+  color: white;
+  background-color: rgba(33, 34, 68, 0.503);
 }

@@ -1,0 +1,27 @@
+.thumb {
+  max-width: 170px;
+}
+
+.imgProfile {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  width: 170px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.subTitle {
+  width: 170px;
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -1,0 +1,40 @@
+.formSubmit {
+  display: flex;
+  gap: 5px;
+
+  width: 100%;
+  max-width: 288px;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+  border: 1px solid rgba(96, 97, 131, 0.5);
+  border-radius: 4px;
+  background-color: rgba(96, 97, 131, 0.134);
+  font-size: 14px;
+  color: rgba(96, 97, 131, 0.647);
+  padding-left: 8px;
+  margin-left: 2px;
+}
+
+.button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: rgba(96, 97, 131, 0.503);
+  display: flex;
+  align-items: center;
+}
+
+button:hover {
+  background-color: rgba(33, 34, 68, 0.503);
+}
+
+.icon {
+  fill: rgb(96, 97, 131);
+  padding: 5px 7px;
+}
+.icon:hover {
+  fill: white;
+}

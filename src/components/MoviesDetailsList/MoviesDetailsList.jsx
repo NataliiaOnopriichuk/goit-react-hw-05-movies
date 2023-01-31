@@ -11,7 +11,7 @@ export const MoviesDetailsList = ({ dataMovies }) => {
 
   return (
     <>
-      <button>
+      <button className={css.btn}>
         <BsArrowLeftShort />
         Go back
       </button>

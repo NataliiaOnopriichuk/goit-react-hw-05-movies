@@ -1,5 +1,5 @@
 .thumb {
-  max-width: 350px;
+  max-width: 250px;
 }
 
 .imgPoster {
@@ -12,14 +12,15 @@
 
 .wrapper {
   display: flex;
-  gap: 15px;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
 .inner {
   max-width: 650px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .title {
@@ -27,11 +28,39 @@
 }
 
 .subTitle {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .list {
   display: flex;
   gap: 15px;
+}
+
+svg {
+  height: 20px;
+  width: 20px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  padding: 5px 7px;
+  margin-bottom: 15px;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  background-color: rgba(96, 97, 131, 0.503);
+}
+
+button:hover {
+  color: white;
+  background-color: rgba(33, 34, 68, 0.503);
 }

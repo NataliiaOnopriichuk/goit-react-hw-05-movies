@@ -1,14 +1,12 @@
 import { MoviesDetailsList } from 'components/MoviesDetailsList/MoviesDetailsList';
+import css from './MoviesDetails.module.css';
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { getMovieByIdApi } from 'service/api';
 
-// import PropTypes from 'prop-types'
-
 export const MoviesDetails = () => {
   const { movieId } = useParams();
   const [dataMovies, setDataMovies] = useState({});
-  const [setError] = useState(null);
 
   useEffect(() => {
     if (!movieId) return;
@@ -17,18 +15,20 @@ export const MoviesDetails = () => {
       console.log('data :>> ', data);
       setDataMovies(data);
     };
-    getMovieById().catch(error => setError(error.message));
-  }, [movieId, setError]);
+    getMovieById().catch(error => console.error(error));
+  }, [movieId]);
 
   return (
     <>
-      <MoviesDetailsList dataMovies={dataMovies} />
-      <div>
-        <NavLink to="cast">Акторський склад</NavLink>
-        <NavLink to="reviews">Відгуки</NavLink>
+      {dataMovies && <MoviesDetailsList dataMovies={dataMovies} />}
+      <div className={css.link}>
+        <button>
+          <NavLink to="cast">Cast</NavLink>
+        </button>
+        <button>
+          <NavLink to="reviews">Reviews</NavLink>
+        </button>
       </div>
     </>
   );
 };
-
-// Layout.propTypes = {}

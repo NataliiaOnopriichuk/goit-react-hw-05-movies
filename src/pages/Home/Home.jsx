@@ -1,9 +1,8 @@
-// import { MoviesItem } from 'components/MoviesItem/MoviesItem';
-import { MoviesListItem } from 'components/MoviesItem/MoviesListItem';
+import { MoviesListItem } from 'components/MoviesListItem/MoviesListItem';
+import css from './Home.module.css';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getMovieTrendApi } from 'service/api';
-// import PropTypes from 'prop-types'
 
 export const Home = () => {
   const [setError] = useState(null);
@@ -18,12 +17,10 @@ export const Home = () => {
   }, [setError]);
 
   return (
-    <ul>
+    <ul className={css.list}>
       {dataMovies.map(el => (
         <MoviesListItem key={el.id} {...el} />
       ))}
     </ul>
   );
 };
-
-// Layout.propTypes = {}

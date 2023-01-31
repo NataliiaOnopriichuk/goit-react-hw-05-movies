@@ -6,7 +6,7 @@
 
 .navList {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   margin: 0 auto;
@@ -20,14 +20,14 @@
 .navLink {
   font-size: 22px;
   padding: 10px 35px;
-  border: 1px solid yellowgreen;
-  color: yellowgreen;
+  border: 1px solid rgb(103, 194, 255);
+  color: rgb(103, 194, 255);
   background-color: transparent;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .activeLink {
-  background-color: #ffff0080;
+  background-color: rgb(154, 221, 255);
   color: black;
 }

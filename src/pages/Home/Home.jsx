@@ -1,5 +1,5 @@
 // import { MoviesItem } from 'components/MoviesItem/MoviesItem';
-import { MoviesItem } from 'components/MoviesItem/MoviesItem';
+import { MoviesListItem } from 'components/MoviesItem/MoviesListItem';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { getMovieTrendApi } from 'service/api';
@@ -20,7 +20,7 @@ export const Home = () => {
   return (
     <ul>
       {dataMovies.map(el => (
-        <MoviesItem key={el.id} {...el} />
+        <MoviesListItem key={el.id} {...el} />
       ))}
     </ul>
   );

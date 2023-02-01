@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import css from './SearchForm.module.css';
 import { BiSearch } from 'react-icons/bi';
 import { useState } from 'react';
@@ -6,7 +5,11 @@ import { useSearchParams } from 'react-router-dom';
 
 export const SearchForm = () => {
   const [input, setInput] = useState('');
-  const [setSearch] = useSearchParams();
+  const [search, setSearch] = useSearchParams();
+
+  const handleChangeValue = event => {
+    setInput(event.target.value);
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -19,7 +22,7 @@ export const SearchForm = () => {
       <input
         className={css.input}
         value={input}
-        onChange={event => setInput(event.target.value)}
+        onChange={handleChangeValue}
         type="text"
         placeholder="Search"
       />

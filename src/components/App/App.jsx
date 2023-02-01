@@ -1,5 +1,5 @@
 import { Cast } from 'components/Cast/Cast';
-import { Layout } from 'components/Layout.jsx/Layout';
+import { Layout } from 'components/Layout.jsx/Layout/Layout';
 import { Reviews } from 'components/Reviews/Reviews';
 import { Home } from 'pages/Home/Home';
 import { MoviesDetails } from 'pages/MovieDetails/MoviesDetails';
@@ -11,7 +11,7 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/movies/:movieId" element={<MoviesDetails />}>
             <Route path="cast" element={<Cast />} />
@@ -23,9 +23,3 @@ export const App = () => {
     </div>
   );
 };
-
-// '/' – компонент Home, домашня сторінка зі списком популярних кінофільмів.
-// '/movies' – компонент Movies, сторінка пошуку кінофільмів за ключовим словом.
-// '/movies/:movieId' – компонент MovieDetails, сторінка з детальною інформацією про кінофільм.
-// /movies/:movieId/cast – компонент Cast, інформація про акторський склад. Рендериться на сторінці MovieDetails.
-// /movies/:movieId/reviews – компонент Reviews, інформація про огляди. Рендериться на сторінці MovieDetails.

@@ -1,4 +1,5 @@
 import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
+import { Section } from 'components/Section/Section';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -19,12 +20,14 @@ export const Reviews = () => {
   }, [movieId]);
 
   return (
-    <ul className={css.wrapper}>
-      {dataMovies.length > 0 ? (
-        dataMovies.map(el => <ReviewsItem key={el.id} {...el} />)
-      ) : (
-        <p>We don't have any reviews for this movie</p>
-      )}
-    </ul>
+    <Section>
+      <ul className={css.wrapper}>
+        {dataMovies.length > 0 ? (
+          dataMovies.map(el => <ReviewsItem key={el.id} {...el} />)
+        ) : (
+          <p>We don't have any reviews for this movie</p>
+        )}
+      </ul>
+    </Section>
   );
 };

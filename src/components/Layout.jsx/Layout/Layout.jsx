@@ -1,14 +1,14 @@
-import { Navigation } from 'components/Navigation/Navigation';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header } from '../Header/Header';
 
 export const Layout = () => {
   return (
     <>
-      <Navigation />
-      <div style={{ padding: '30px 20px' }}>
+      <Header />
+      <main>
         <Outlet />
-      </div>
+      </main>
     </>
   );
 };

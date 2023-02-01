@@ -11,7 +11,7 @@ export const getMovieTrendApi = async () => {
           api_key: API_KEY,
       },
     })
-    .then((response) => response.data);
+    .then((response) => response.data.results);
 };
 
 
@@ -42,7 +42,7 @@ export const getCastApi = async (id) => {
           api_key: API_KEY,
       },
     })
-    .then((response) => response.data);
+    .then((response) => response.data.cast);
 };
 
 export const getMovieByNameApi = async (query) => {
@@ -53,5 +53,5 @@ export const getMovieByNameApi = async (query) => {
         query,
       },
     })
-    .then((response) => response.data);
+    .then((response) => response.data.results);
 };

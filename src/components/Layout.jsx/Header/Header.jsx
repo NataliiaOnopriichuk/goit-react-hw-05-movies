@@ -1,8 +1,8 @@
-import css from './Navigation.module.css';
+import css from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
-export const Navigation = () => {
+export const Header = () => {
   return (
     <nav className={css.nav}>
       <ul className={css.navList}>

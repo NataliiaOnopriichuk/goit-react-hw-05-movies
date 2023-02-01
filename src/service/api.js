@@ -44,3 +44,14 @@ export const getCastApi = async (id) => {
     })
     .then((response) => response.data);
 };
+
+export const getMovieByNameApi = async (query) => {
+  return await axios
+    .get(`/search/movie`, {
+      params: {
+        api_key: API_KEY,
+        query,
+      },
+    })
+    .then((response) => response.data);
+};

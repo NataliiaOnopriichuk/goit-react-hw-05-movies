@@ -26,8 +26,11 @@ export const Cast = () => {
         paddingTop: '20px',
       }}
     >
-      {dataMovies.length > 0 &&
-        dataMovies.map(el => <CastItems key={el.id} {...el} />)}
+      {dataMovies.length > 0 ? (
+        dataMovies.map(el => <CastItems key={el.id} {...el} />)
+      ) : (
+        <p>We don't have a cast list for this movie</p>
+      )}
     </ul>
   );
 };

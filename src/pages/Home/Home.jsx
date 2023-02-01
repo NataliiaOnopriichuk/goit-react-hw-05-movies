@@ -18,9 +18,8 @@ export const Home = () => {
 
   return (
     <ul className={css.list}>
-      {dataMovies.map(el => (
-        <MoviesListItem key={el.id} {...el} />
-      ))}
+      {dataMovies.length > 0 &&
+        dataMovies.map(el => <MoviesListItem key={el.id} {...el} />)}
     </ul>
   );
 };

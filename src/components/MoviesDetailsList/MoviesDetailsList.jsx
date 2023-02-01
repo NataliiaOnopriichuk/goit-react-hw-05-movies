@@ -1,19 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import css from './MoviesDetailsList.module.css';
 import { BsArrowLeftShort } from 'react-icons/bs';
+import { NavLink, useLocation } from 'react-router-dom';
+import css from './MoviesDetailsList.module.css';
 
 export const MoviesDetailsList = ({ dataMovies }) => {
   const { poster_path, title, release_date, overview, vote_average, genres } =
     dataMovies;
+  const location = useLocation();
 
   const movieYear = new Date(Date.parse(release_date));
 
   return (
     <>
       <button className={css.btn}>
-        <BsArrowLeftShort />
-        Go back
+        <NavLink to={location.state?.from ?? '/'}>
+          <BsArrowLeftShort />
+          Go back
+        </NavLink>
       </button>
       <div className={css.wrapper}>
         <div className={css.thumb}>

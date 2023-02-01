@@ -1,33 +1,35 @@
+import { Loader } from 'components/Loader/Loader';
 import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 import { Section } from 'components/Section/Section';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import { useFetchData } from 'hooks/useFetchData';
 import { useParams } from 'react-router-dom';
 import { getReviewsMoviesApi } from 'service/api';
 import css from './Reviews.module.css';
 
 export const Reviews = () => {
-  const [dataMovies, setDataMovies] = useState([]);
   const { movieId } = useParams();
+  const {
+    data: dataMovies,
+    isError,
+    isLoading,
+  } = useFetchData(() => getReviewsMoviesApi(movieId), [movieId]);
 
-  useEffect(() => {
-    if (!movieId) return;
-    const ReviewsMovies = async () => {
-      const data = await getReviewsMoviesApi(movieId);
-      setDataMovies(data.results);
-    };
-    ReviewsMovies().catch(error => console.error(error));
-  }, [movieId]);
+  if (isError) {
+    return <p>Download error</p>;
+  }
 
   return (
     <Section>
       <ul className={css.wrapper}>
-        {dataMovies.length > 0 ? (
-          dataMovies.map(el => <ReviewsItem key={el.id} {...el} />)
+        {isLoading ? (
+          <Loader />
         ) : (
-          <p>We don't have any reviews for this movie</p>
+          dataMovies &&
+          dataMovies.map(el => <ReviewsItem key={el.id} {...el} />)
         )}
       </ul>
     </Section>
   );
 };
+
+/* <p>We don't have any reviews for this movie</p> */

@@ -1,12 +1,15 @@
 import css from './ButtonDescr.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 
 export const ButtonDescr = () => {
+  const location = useLocation();
+
   return (
     <>
       <div className={css.inner}>
         <NavLink
+          state={{ from: location }}
           className={({ isActive }) =>
             clsx(css.link, isActive && css.activeLink)
           }
@@ -15,6 +18,7 @@ export const ButtonDescr = () => {
           Cast
         </NavLink>
         <NavLink
+          state={{ from: location }}
           className={({ isActive }) =>
             clsx(css.link, isActive && css.activeLink)
           }

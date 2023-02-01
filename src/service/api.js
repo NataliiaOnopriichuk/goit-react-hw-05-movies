@@ -32,7 +32,8 @@ export const getReviewsMoviesApi = async (id) => {
           api_key: API_KEY,
       },
     })
-    .then((response) => response.data);
+    .then((response) => response.data.results);
+
 };
 
 export const getCastApi = async (id) => {

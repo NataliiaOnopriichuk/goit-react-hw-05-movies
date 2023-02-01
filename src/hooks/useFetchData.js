@@ -20,6 +20,7 @@ export const useFetchData = (callback, deps = []) => {
       }
     };
     fetchData();
+    // eslint-disable-next-line
   }, deps);
   return {
     data,

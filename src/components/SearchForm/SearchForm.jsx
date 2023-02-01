@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 
 export const SearchForm = () => {
   const [input, setInput] = useState('');
+  // eslint-disable-next-line
   const [search, setSearch] = useSearchParams();
 
   const handleChangeValue = event => {

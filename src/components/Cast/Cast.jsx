@@ -36,6 +36,5 @@ export const Cast = () => {
     </Section>
   );
 };
-{
-  /* <p>We don't have a cast list for this movie</p>; */
-}
+
+/* <p>We don't have a cast list for this movie</p>; */

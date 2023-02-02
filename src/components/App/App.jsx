@@ -1,19 +1,34 @@
-// import { Cast } from 'components/Cast/Cast';
-// import { Reviews } from 'components/Reviews/Reviews';
-// import { Home } from 'pages/Home/Home';
-// import { MoviesDetails } from 'pages/MovieDetails/MoviesDetails';
-// import { Movies } from 'pages/Movies/Movies';
 import { Layout } from 'components/Layout/Layout/Layout';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-const Home = lazy(() => import('../../pages/Home/Home'));
-const Movies = lazy(() => import('../../pages/Movies/Movies'));
-const MoviesDetails = lazy(() =>
-  import('../../pages/MovieDetails/MoviesDetails')
+const Home = lazy(() =>
+  import('../../pages/Home/Home').then(module => ({ default: module.Home }))
 );
-const Cast = lazy(() => import('../Cast/Cast'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
+
+const Movies = lazy(() =>
+  import('../../pages/Movies/Movies').then(module => ({
+    default: module.Movies,
+  }))
+);
+
+const MoviesDetails = lazy(() =>
+  import('../../pages/MovieDetails/MoviesDetails').then(module => ({
+    default: module.MoviesDetails,
+  }))
+);
+
+const Cast = lazy(() =>
+  import('../Cast/Cast').then(module => ({
+    default: module.Cast,
+  }))
+);
+
+const Reviews = lazy(() =>
+  import('../Reviews/Reviews').then(module => ({
+    default: module.Reviews,
+  }))
+);
 
 export const App = () => {
   return (
